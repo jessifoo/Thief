@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Thief0.1/Assets/RageSpline/Example Game - Uphill Rage/Scripts/RageDude.cs">
+    <Files>
+      <File FileName="../Thief0.1/Assets/RageSpline/Example Game - Uphill Rage/Scripts/RageDude.cs" Line="76" Column="10" />
+      <File FileName="Assets/Game/FollowTheMouse.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Drifter.cs" Line="15" Column="5" />
+      <File FileName="Assets/Game/SecurityCamera.cs" Line="14" Column="95" />
+      <File FileName="Assets/Game/CameraScan.cs" Line="52" Column="38" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
