@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SecurityCamera : MonoBehaviour {
 	
-	public int rotationSpeed;
+	public float rotationAngle;
 	public GameObject frameOfView;
 	
 	private Transform thisTransform;
@@ -11,7 +11,7 @@ public class SecurityCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		iTween.RotateBy(this.gameObject, iTween.Hash("z", 0.25,"time", 2, "easeType", "easeInOutSine","loopType","pingPong"));//, "delay", 0.4));
+		iTween.RotateBy(this.gameObject, iTween.Hash("z", rotationAngle,"time", 2, "easeType", "easeInOutSine","loopType","pingPong"));//, "delay", 0.4));
 	}
 	
 	// Update is called once per frame
