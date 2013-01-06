@@ -18,7 +18,7 @@ public class CameraScan : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		
 		foreach (ContactPoint contact in collision.contacts) {
-			if (contact.otherCollider.name == "Ship") {
+			if (contact.otherCollider.name == "Thief") {
 				print ("ship hit");
 				rageSpline.SetFillColor1(new Color(1f, 0f, 0f));
 				rageSpline.RefreshMesh();
@@ -32,7 +32,7 @@ public class CameraScan : MonoBehaviour {
 	/*
 	void OnTriggerEnter(Collider other) {
 		print ("on trigger");
-		if (other.name == "Ship") {
+		if (other.name == "Thief") {
 			print ("ship triggered scan");
 			rageSpline.SetFillColor1(new Color(1f, 0f, 0f));
 			rageSpline.RefreshMesh();
@@ -41,7 +41,7 @@ public class CameraScan : MonoBehaviour {
 	
 	void OnTriggerExit(Collider other) {
 		print ("trigger exit");
-		if (other.name == "Ship") {
+		if (other.name == "Thief) {
 			print ("ship trigger left");
 			rageSpline.SetFillColor1(new Color(0f, 0f, 1f));
 			rageSpline.RefreshMesh();
@@ -50,7 +50,7 @@ public class CameraScan : MonoBehaviour {
 	*/
 		
 	void OnTriggerStay(Collider other) {
-		if (other.name == "Ship") {
+		if (other.name == "Thief") {
 			print ("ship triggered scan");
 			rageSpline.SetFillColor1(new Color(1f, 0f, 0f));
 			rageSpline.RefreshMesh();
