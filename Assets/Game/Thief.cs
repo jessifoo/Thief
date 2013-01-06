@@ -13,13 +13,21 @@ public class Thief : MonoBehaviour {
     public float origParticleLocalYSpeed;
     public ParticleEmitter emitter;
 	
+	public int itemsPickedUp;
+	
 	private bool mouseDown = false;
+	
+	public GUIText itemsPickedUpText;
+	
+	
 
 	// Use this for initialization
 	void Start () {
         origParticleMinSize = emitter.minSize;
         origParticleMaxSize = emitter.maxSize;
         origParticleLocalYSpeed = emitter.localVelocity.y;
+		itemsPickedUp = 0;
+		
 	}
 	
 	// Update is called once per frame
@@ -34,6 +42,9 @@ public class Thief : MonoBehaviour {
 			UpdateThiefVelocity();
 
         UpdateParticleTrail();
+		
+		itemsPickedUpText.text = "Items Picked Up: " + itemsPickedUp.ToString();
+		
 	}
 	
 	void UpdateThiefVelocity() {
@@ -62,5 +73,13 @@ public class Thief : MonoBehaviour {
 		emitter.minSize = origParticleMinSize * (rigidbody.velocity.magnitude / maxSpeed);
         emitter.maxSize = origParticleMaxSize * (rigidbody.velocity.magnitude / maxSpeed);
         emitter.localVelocity = new Vector3(0f, origParticleLocalYSpeed * (rigidbody.velocity.magnitude / maxSpeed), 0f);
+	}
+	
+	void OnTriggerEnter(Collider other) {
+		if(other.name == "item"){
+			itemsPickedUp++;
+			Destroy(other.gameObject);
+			
+		}
 	}
 }
