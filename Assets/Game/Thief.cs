@@ -1,15 +1,19 @@
 using UnityEngine;
 using System.Collections;
 
-public class FollowTheMouse : MonoBehaviour {
-
+public class Thief : MonoBehaviour {
+	
+	// Thief attributes
     public float maxSpeed;
     public float moveSpeed;
     public float turnSpeed;
+	// Particle system
     public float origParticleMinSize;
     public float origParticleMaxSize;
     public float origParticleLocalYSpeed;
     public ParticleEmitter emitter;
+	
+	private bool mouseDown = false;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +24,20 @@ public class FollowTheMouse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 mousePos = Input.mousePosition;
+       
+		if (Input.GetMouseButtonDown(0))
+			mouseDown = true;
+		if (Input.GetMouseButtonUp(0))
+			mouseDown = false;
+		
+		if (mouseDown)
+			UpdateThiefVelocity();
+
+        UpdateParticleTrail();
+	}
+	
+	void UpdateThiefVelocity() {
+		 Vector3 mousePos = Input.mousePosition;
         mousePos.z = 1.0f;
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
@@ -39,8 +56,10 @@ public class FollowTheMouse : MonoBehaviour {
         {
             rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
         }
-
-        emitter.minSize = origParticleMinSize * (rigidbody.velocity.magnitude / maxSpeed);
+	}
+	
+	void UpdateParticleTrail() {
+		emitter.minSize = origParticleMinSize * (rigidbody.velocity.magnitude / maxSpeed);
         emitter.maxSize = origParticleMaxSize * (rigidbody.velocity.magnitude / maxSpeed);
         emitter.localVelocity = new Vector3(0f, origParticleLocalYSpeed * (rigidbody.velocity.magnitude / maxSpeed), 0f);
 	}
