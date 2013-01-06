@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{7DC07A42-C015-DADD-7A1B-E7CDA1394708}</ProjectGuid>
+	<ProjectGuid>{0C43B344-5C71-2B63-22DE-881E0A163239}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -169,6 +169,7 @@
      <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\FarseerPhysics\Factories\FixtureFactory.cs" />
      <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\FarseerPhysics\Factories\JointFactory.cs" />
      <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\FarseerPhysics\Factories\LinkFactory.cs" />
+     <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\Temp\TestCoreCollisionEvents.cs" />
      <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\Testbed\BridgeTest.cs" />
      <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\Testbed\BuoyancyTest.cs" />
      <Compile Include="Assets\_ThirdParty\RageFarseer\Plugins\FarseerComponents\Base\Testbed\CCDTest.cs" />
