@@ -54,14 +54,17 @@ public class Thief : MonoBehaviour {
 
         Vector3 dirVec = worldPos - transform.position;
 
-        if (dirVec.magnitude > 1f) {
+        if (dirVec.magnitude > 1f)
+        {
             rigidbody.velocity += dirVec * Time.deltaTime * moveSpeed;
-            if (Mathf.Abs(Vector3.Dot(transform.right * -1f, dirVec.normalized)) > 0.01f) {
+            if (Mathf.Abs(Vector3.Dot(transform.right * -1f, dirVec.normalized)) > 0.01f)
+            {
                 rigidbody.angularVelocity = new Vector3(0f, 0f, Vector3.Dot(transform.right*-1f, dirVec.normalized) * turnSpeed);
             }
         }
 
-        if (rigidbody.velocity.magnitude > maxSpeed) {
+        if (rigidbody.velocity.magnitude > maxSpeed)
+        {
             rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
         }
 	}
