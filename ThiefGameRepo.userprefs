@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Thief.cs">
+    <Files>
+      <File FileName="Assets/Game/Thief.cs" Line="89" Column="10" />
+      <File FileName="Assets/Game/SecurityCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/CameraScan.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

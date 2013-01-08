@@ -14,3 +14,4 @@ Library/guidmapper
 Temp
 *.pidb
 build
+Assets/_ThirdParty/RageFarseer/Plugins/FarseerComponents/Base/Temp.meta

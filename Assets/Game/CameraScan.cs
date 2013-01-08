@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraScan : MonoBehaviour {
 	
 	private IRageSpline rageSpline;
+	private bool onAlert = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,17 +29,28 @@ public class CameraScan : MonoBehaviour {
 			}
 		}
 	}*/
-
-	/*
+	
+	IEnumerator SecurityAlert() {
+		print ("ship triggered scan");
+		onAlert = true;
+		rageSpline.SetFillColor1(new Color(1f, 0f, 0f));
+		rageSpline.RefreshMesh();
+		
+		yield return new WaitForSeconds(2f);
+		
+		onAlert = false;
+		rageSpline.SetFillColor1(new Color(0f, 0f, 1f));
+		rageSpline.RefreshMesh();
+	}
+	
 	void OnTriggerEnter(Collider other) {
 		print ("on trigger");
-		if (other.name == "Ship") {
-			print ("ship triggered scan");
-			rageSpline.SetFillColor1(new Color(1f, 0f, 0f));
-			rageSpline.RefreshMesh();
+		if (other.name == "Thief") {
+			if (!onAlert)
+				StartCoroutine(SecurityAlert());
 		}
 	}
-	*/
+	/*
 	void OnTriggerExit(Collider other) {
 		print ("trigger exit");
 		if (other.name == "Thief") {
@@ -47,7 +59,6 @@ public class CameraScan : MonoBehaviour {
 			rageSpline.RefreshMesh();
 		}
 	}
-	
 		
 	void OnTriggerStay(Collider other) {
 		if (other.name == "Thief") {
@@ -56,7 +67,7 @@ public class CameraScan : MonoBehaviour {
 			rageSpline.RefreshMesh();
 		}
 	}
-	
+	*/
 
 
 }
