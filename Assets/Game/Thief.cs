@@ -20,6 +20,7 @@ public class Thief : MonoBehaviour {
 	private bool mouseDown = false;
 	
 	public GUIText itemsPickedUpText;
+	public GUIText gameOverText;
 	
 	
 
@@ -99,10 +100,14 @@ public class Thief : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
+		print ("in collision: "+other.name);
 		if(other.name == "item"){
 			itemsPickedUp++;
 			Destroy(other.gameObject);
 			
+		}else if(other.name == "Rug"){
+			print("in rug");
+			gameOverText.text = "GAME OVER";
 		}
 	}
 }
